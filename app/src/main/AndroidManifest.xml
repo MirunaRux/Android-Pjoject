@@ -29,9 +29,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".login.LoginActivity" />
         </activity>
-        <activity android:name=".signup.CreateAccountActivity"
-            android:label="@string/label_createAccount">
-        </activity>
+        <activity
+            android:name=".signup.CreateAccountActivity"
+            android:label="@string/label_createAccount"></activity>
+        <activity
+            android:name=".dashboard.lateralmenu.LateralMenuActivity"
+            android:label="@string/title_activity_lateral_menu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
