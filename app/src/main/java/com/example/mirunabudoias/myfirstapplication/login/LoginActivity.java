@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.mirunabudoias.myfirstapplication.dashboard.lateralmenu.LateralMenuActivity;
 import com.example.mirunabudoias.myfirstapplication.utils.Constants;
 import com.example.mirunabudoias.myfirstapplication.signup.CreateAccountActivity;
 import com.example.mirunabudoias.myfirstapplication.R;
@@ -127,7 +128,9 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             }).show();
                 }else {
-                    Toast.makeText(this, "It's ok !", Toast.LENGTH_SHORT).show();
+                    Intent dashboardIntent = new Intent(LoginActivity.this, LateralMenuActivity.class);
+                    startActivity(dashboardIntent);
+                    finish();
                 }
                 break;
             case R.id.btn_signUp_constraint :

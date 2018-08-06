@@ -31,11 +31,12 @@
         </activity>
         <activity
             android:name=".signup.CreateAccountActivity"
-            android:label="@string/label_createAccount"></activity>
+            android:label="@string/label_createAccount" />
         <activity
             android:name=".dashboard.lateralmenu.LateralMenuActivity"
             android:label="@string/title_activity_lateral_menu"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".about.AboutActivity"></activity>
     </application>
 
 </manifest>
