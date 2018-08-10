@@ -6,4 +6,6 @@
     <color name="blue_medium">#4671ff</color>
     <color name="green_medium">#50ff25</color>
     <color name="pink_lite">#d8aad6</color>
+    <color name="black">#171717</color>
+    <color name="blackOpacity">#91000000</color>
 </resources>

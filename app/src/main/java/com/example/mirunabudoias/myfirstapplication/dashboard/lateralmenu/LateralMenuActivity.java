@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.mirunabudoias.myfirstapplication.R;
 import com.example.mirunabudoias.myfirstapplication.about.AboutActivity;
+import com.example.mirunabudoias.myfirstapplication.faq.FaqActivity;
 
 public class LateralMenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -105,6 +106,9 @@ public class LateralMenuActivity extends AppCompatActivity
         }else if (id == R.id.nav_about){
             Intent aboutIntent = new Intent(this, AboutActivity.class);
             startActivity(aboutIntent);
+        }else if(id == R.id.nav_faq){
+            Intent faqIntent = new Intent(this, FaqActivity.class);
+            startActivity(faqIntent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -63,7 +63,10 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         CheckBox checkBoxRememberMe = findViewById(R.id.checkBox_constraint_remember);
-        checkBoxRememberMe.setChecked(SharedPreferenceManager.loadRemember(this));
+
+        if(SharedPreferenceManager.loadRemember(this)){
+            goToDashboard();
+        }
 
         checkBoxRememberMe.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -128,9 +131,7 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             }).show();
                 }else {
-                    Intent dashboardIntent = new Intent(LoginActivity.this, LateralMenuActivity.class);
-                    startActivity(dashboardIntent);
-                    finish();
+                  goToDashboard();
                 }
                 break;
             case R.id.btn_signUp_constraint :
@@ -138,6 +139,12 @@ public class LoginActivity extends AppCompatActivity {
                 startActivityForResult(signUpIntent, Constants.REQUEST_CODE_CREATE_ACCOUNT);
                 break;
         }
+    }
+
+    private void goToDashboard() {
+        Intent dashboardIntent = new Intent(LoginActivity.this, LateralMenuActivity.class);
+        startActivity(dashboardIntent);
+        finish();
     }
 
     @Override

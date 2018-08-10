@@ -4,6 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context=".about.AboutActivity">
+
+    <ImageView
+        android:id="@+id/img_about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/miruna"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="4:3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_about_description"
+        android:text="@string/hint_description"
+        android:paddingLeft="@dimen/small_size"
+        android:paddingRight="@dimen/small_size"
+        android:textColor="@color/blackOpacity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_about"
+        app:layout_constraintBottom_toTopOf="@id/tv_about_text"/>
+
+    <TextView
+        android:id="@+id/tv_about_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/small_size"
+        android:paddingRight="@dimen/small_size"
+        android:text="@string/about_text"
+        android:textSize="@dimen/medium_size"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tv_about_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/large_size"
+        android:layout_marginRight="@dimen/large_size"
+        app:srcCompat="@drawable/ic_contact" />
 
 </android.support.constraint.ConstraintLayout>

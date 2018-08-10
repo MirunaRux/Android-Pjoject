@@ -36,7 +36,17 @@
             android:name=".dashboard.lateralmenu.LateralMenuActivity"
             android:label="@string/title_activity_lateral_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".about.AboutActivity"></activity>
+        <activity
+            android:name=".about.AboutActivity"
+            android:label="About"
+            android:parentActivityName=".dashboard.lateralmenu.LateralMenuActivity" />
+        <activity
+            android:name=".faq.FaqActivity"
+            android:label="FAQ"
+            android:parentActivityName=".dashboard.lateralmenu.LateralMenuActivity"/>
+        <activity android:name=".about.ContactActivity"
+            android:label="Contact"
+            android:parentActivityName=".dashboard.lateralmenu.LateralMenuActivity"/>
     </application>
 
 </manifest>
