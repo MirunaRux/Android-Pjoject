@@ -10,4 +10,9 @@
         <item>Question 1?</item>
         <item>Question 2?</item>
     </string-array>
+
+    <string-array name="questions_answer">
+        <item>Answer for question 1</item>
+        <item>Answer for question 2</item>
+    </string-array>
 </resources>

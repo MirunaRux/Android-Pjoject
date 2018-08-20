@@ -40,13 +40,16 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
-    <string name="about_text">Lorem ipsum sin dolor Lorem ipsum sin dolor
-                              Lorem ipsum sin dolor Lorem ipsum sin dolor
-                              Lorem ipsum sin dolor  Lorem ipsum sin dolor</string>
+    <string name="about_text">Lorem ipsum sin dolor Lorem ipsum sin dolor Lorem ipsum sin dolor Lorem ipsum sin dolor Lorem ipsum sin dolor  Lorem ipsum sin dolor</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hint_email">Email</string>
     <string name="send_email">Send Email</string>
+    <string name="addUser_name">Name</string>
+    <string name="addUser_age">Age</string>
+    <string name="addUser_address">Address</string>
+    <string name="all_save">Save</string>
+    <string name="action_logout">Logout</string>
 
 </resources>

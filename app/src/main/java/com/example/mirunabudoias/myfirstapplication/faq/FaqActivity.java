@@ -1,5 +1,6 @@
 package com.example.mirunabudoias.myfirstapplication.faq;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -18,6 +19,8 @@ public class FaqActivity extends AppCompatActivity implements FaqFragment.OnFrag
 
     @Override
     public void onItemClick(long id) {
-        Toast.makeText(this, "bla bla " + id, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, FAQDetailActivity.class);
+        intent.putExtra(FAQDetailActivity.EXTRA_FAQ_ID, (int) id);
+        startActivity(intent);
     }
 }

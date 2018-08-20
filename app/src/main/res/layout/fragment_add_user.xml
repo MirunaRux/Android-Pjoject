@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user.AddUserFragment">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_addUser_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/til_addUser_age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_addUser_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/addUser_name" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_addUser_age"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/til_addUser_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/til_addUser_name">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_addUser_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/addUser_age" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_addUser_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/til_addUser_age"
+        app:layout_constraintBottom_toTopOf="@id/rg_gender">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_addUser_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/addUser_address" />
+
+    </android.support.design.widget.TextInputLayout>
+    
+    <RadioGroup
+        android:id="@+id/rg_gender"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/til_addUser_address"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_addUser_save">
+      <RadioButton
+          android:id="@+id/rb_gender_male"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/all_male"/>
+
+      <RadioButton
+          android:id="@+id/rb_gender_female"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/all_female"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_addUser_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/all_save"
+        app:layout_constraintTop_toBottomOf="@+id/rg_gender"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

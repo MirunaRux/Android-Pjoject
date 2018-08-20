@@ -3,7 +3,7 @@ package com.example.mirunabudoias.myfirstapplication.dashboard.lateralmenu;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,10 +17,17 @@ import android.widget.Toast;
 
 import com.example.mirunabudoias.myfirstapplication.R;
 import com.example.mirunabudoias.myfirstapplication.about.AboutActivity;
+import com.example.mirunabudoias.myfirstapplication.faq.FAQDetailFragment;
+import com.example.mirunabudoias.myfirstapplication.user.AddUserActivity;
 import com.example.mirunabudoias.myfirstapplication.faq.FaqActivity;
+import com.example.mirunabudoias.myfirstapplication.login.LoginActivity;
+import com.example.mirunabudoias.myfirstapplication.user.User;
+import com.example.mirunabudoias.myfirstapplication.user.UserListFragment;
+import com.example.mirunabudoias.myfirstapplication.user.dummy.DummyContent;
+import com.example.mirunabudoias.myfirstapplication.utils.SharedPreferenceManager;
 
 public class LateralMenuActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, UserListFragment.OnListFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +40,8 @@ public class LateralMenuActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                Toast.makeText(LateralMenuActivity.this, "Test", Toast.LENGTH_SHORT).show();
-                            }
-                        }).show();
+                Intent addUserIntent = new Intent(LateralMenuActivity.this, AddUserActivity.class);
+                startActivity(addUserIntent);
             }
         });
 
@@ -78,7 +80,11 @@ public class LateralMenuActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_logout) {
+            SharedPreferenceManager.saveRememberMe(LateralMenuActivity.this, false);
+            Intent loginActivityIntent = new Intent(LateralMenuActivity.this, LoginActivity.class);
+            startActivity(loginActivityIntent);
+            finish();
             return true;
         }
 
@@ -91,22 +97,16 @@ public class LateralMenuActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_users) {
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.container_dashboard, UserListFragment.newInstance(1));
+            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }else if (id == R.id.nav_about){
+        } else if (id == R.id.nav_about) {
             Intent aboutIntent = new Intent(this, AboutActivity.class);
             startActivity(aboutIntent);
-        }else if(id == R.id.nav_faq){
+        } else if (id == R.id.nav_faq) {
             Intent faqIntent = new Intent(this, FaqActivity.class);
             startActivity(faqIntent);
         }
@@ -114,5 +114,12 @@ public class LateralMenuActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onListFragmentInteraction(User item) {
+        Intent editUserIntent = new Intent(this, AddUserActivity.class);
+        editUserIntent.putExtra(AddUserActivity.EXTRA_USER, item);
+        startActivity(editUserIntent);
     }
 }
